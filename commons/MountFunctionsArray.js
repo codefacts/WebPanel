@@ -1,6 +1,7 @@
 module.exports = function MountFunctionsArrayBuilder(config) {
 
     var mountFunctionsArray = [];
+
     mountFunctionsArray.push(function () {
         var $this = this;
         console.info("$this", $this);
@@ -21,12 +22,12 @@ module.exports = function MountFunctionsArrayBuilder(config) {
 
     });
 
-    mountFunctionsArray.push(() => {
+    mountFunctionsArray.push(function () {
         var $this = this;
         console.info("$this", $this);
 
-        config.eventHandlersArray.forEach(handle => {
-            ee.on(handle.event, handle.handler.bind($this));
+        config.eventHandlersArray.forEach(reg => {
+            ee.on(reg.event, reg.handler.bind($this));
         })
 
     });

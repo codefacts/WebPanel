@@ -1,6 +1,6 @@
 module.exports = function CreateLamdaBuilder(config) {
 
-    var service = require('../Service')(config.domain, config.apiBaseUri);
+    var service = require('../../Service')(config.domain, config.apiBaseUri);
 
     var createLamda = function (domainInstance) {
         var $this = this;

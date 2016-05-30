@@ -8,7 +8,7 @@ function Service(domain, apiBaseUri) {
 
         return new Promise(function (resolve, reject) {
 
-            var domainUri = UriHelpers.getDomainDecomposedUri(domain, apiBaseUri) + '/' + id;
+            var domainUri = UriHelpers.domainDecomposedUri(apiBaseUri) + '/' + id;
 
             data = data || {};
             headers = headers || {};
@@ -31,7 +31,7 @@ function Service(domain, apiBaseUri) {
 
         return new Promise(function (resolve, reject) {
 
-            var domainUri = UriHelpers.getDomainDecomposedUri(domain, apiBaseUri);
+            var domainUri = UriHelpers.domainDecomposedUri(apiBaseUri);
 
             data = data || {};
             headers = headers || {};
@@ -53,7 +53,7 @@ function Service(domain, apiBaseUri) {
 
         return new Promise(function (resolve, reject) {
 
-            var domainUri = UriHelpers.domainUri(domain, apiBaseUri);
+            var domainUri = UriHelpers.domainUri(apiBaseUri);
 
             headers = headers || {};
 

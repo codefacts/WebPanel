@@ -11,10 +11,10 @@ exports.toAbsoluteUri = function toAbsoluteUri(str, params) {
 
 exports.parameterize = lib.parameterize;
 
-exports.getDomainDecomposedUri = function (domain, apiBaseUri) {
-    return apiBaseUri + '/' + domain + '/' + 'decomposed';
+exports.domainDecomposedUri = function (apiBaseUri) {
+    return apiBaseUri + '/' + 'decomposed';
 }
 
-exports.domainUri = function createUri(domain, apiBaseUri) {
-    return apiBaseUri + '/' + domain;
+exports.domainUri = function createUri(apiBaseUri) {
+    return apiBaseUri;
 }

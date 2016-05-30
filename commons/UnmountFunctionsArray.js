@@ -6,8 +6,8 @@ module.exports = function UnmountFunctionsArrayBuilder(config) {
         var $this = this;
         console.info("$this", $this);
 
-        config.eventHandlersArray.forEach(handle => {
-            ee.removeListener(handle.event, handle.handler);
+        config.eventHandlersArray.forEach(reg => {
+            ee.removeListener(reg.event, reg.handler);
         })
     });
 

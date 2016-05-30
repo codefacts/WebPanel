@@ -5,6 +5,7 @@ function Builder(config) {
     return function build() {
 
         var comp = {
+
             getDefaultProps: function () {
                 return config.props;
             },
@@ -21,6 +22,8 @@ function Builder(config) {
             },
             render: function () {
                 var $this = this;
+
+                console.info("<-----------view_render----------->");
 
                 return (
 
@@ -39,9 +42,10 @@ function Builder(config) {
             }
         };
 
-        var AddView = React.createClass(config.reactComponentConfigurerLamda(comp) || comp);
+        var ViewComposition = React.createClass(config.reactComponentConfigurerLamda(comp) || comp);
 
-        return AddView;
+        console.info("ViewComposition");
+        return ViewComposition;
 
     };
 
